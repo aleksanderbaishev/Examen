@@ -1,5 +1,5 @@
 const API_KEY = '737a2d8a-5732-4983-a109-60dfb5a6fde4';
-const BASE_URL = 'http://cat-facts-api.std-900.ist.mospolytech.ru/api';
+const BASE_URL = 'http://exam-api-courses.std-900.ist.mospolytech.ru/api';
 
 // Function to display notifications
 function showNotification(message, type = 'success') {
