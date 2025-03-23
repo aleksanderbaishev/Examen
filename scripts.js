@@ -1,4 +1,4 @@
-const API_KEY = '376d83d3-a102-4e83-9973-0bbfa8230233';
+const API_KEY = '737a2d8a-5732-4983-a109-60dfb5a6fde4';
 const BASE_URL = 'http://cat-facts-api.std-900.ist.mospolytech.ru/api';
 
 // Function to display notifications
