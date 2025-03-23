@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Map - RussianMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7a04da13-0260-4cc9-adc0-3690d01fe65b&lang=eu_US" type="text/javascript"></script>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image.png" class="navbar-logo me-2">
+                <span class="h4 mb-0">RussianMaster</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="map.html">Resource Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.html">Personal Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main>
+        <div class="container py-4">
+            <h2 class="mb-4">Educational Resources Map</h2>
+            
+            <!-- Фильтры -->
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search resources...">
+                        <button class="btn btn-primary" type="button" onclick="searchResources()">
+                            <i class="bi bi-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="resourceType" onchange="filterResources()">
+                        <option value="all">All types</option>
+                        <option value="education">Educational Institutions</option>
+                        <option value="community">Community Centers</option>
+                        <option value="library">Public Libraries</option>
+                        <option value="courses">Private Language Courses</option>
+                        <option value="cafe">Language Cafes and Clubs</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Карта -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="map" style="width: 100%; height: 600px;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Places List</h5>
+                            <span class="badge bg-primary" id="resourceCount"></span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="resourcesList">
+                                <!-- Места будут добавлены динамически -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Resource Information</h5>
+                        </div>
+                        <div class="card-body" id="resourceInfo">
+                            <p class="text-muted">Select a point on the map to view information</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer id="footer" class="py-4 bg-dark text-white mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-section">
+                            <h5 class="mb-3">Contact Us</h5>
+                            <p class="contact-info">
+                                Email: info@russianpro.com<br>
+                                Телефон: +7 (999) 123-45-67
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-section">
+                            <h5 class="mb-3">Социальные сети</h5>
+                            <div class="social-links">
+                                <a href="#" class="text-white"><i class="bi bi-vk"></i> VK</a>
+                                <a href="#" class="text-white"><i class="bi bi-youtube"></i> Youtube</a>
+                                <a href="#" class="text-white"><i class="bi bi-telegram"></i> Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="map.js"></script>
+</body>
+</html> 
